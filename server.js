@@ -6,7 +6,9 @@ var app = express();
 app.use(bodyParser.json());
 
 app.get("/api/missatges", function(req, res, next) {
-    Missatge.find(function(err, misstages) {
+    Missatge.find()
+            .sort('-date')
+            .exec(function(err, misstages) {
         if (err) {
             return next(err);
         }
@@ -24,6 +26,10 @@ app.post("/api/missatges", function (req,res,next) {
         if (err) { return next(err) }
         res.status(201).json(missatge);
     });
+});
+
+app.get('/', function(req, res, next) {
+    res.sendfile("layouts/missatges.html");
 });
 
 app.listen(process.env.PORT, function() {

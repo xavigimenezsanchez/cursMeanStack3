@@ -3,6 +3,7 @@
   "dependencies": {
     "body-parser": "^1.10.2",
     "express": "^4.11.1",
-    "mongoose": "^3.8.22"
+    "mongoose": "^3.8.22",
+    "nodemon": "^1.3.6"
   }
 }
