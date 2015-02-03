@@ -31,29 +31,6 @@
         
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
-    <script>
-        var app = angular.module('appLearn',[]);
-        app.controller('MissatgesController',function($scope,$http) {
-                $http.get("api/missatges")
-                .success(function(missatges){
-                    $scope.missatges = missatges;
-                })
-                .error(function(e){
-                    console.log(e);
-                });
-
-                $scope.afegirMissatge = function() {
-                    if ($scope.missatgeBody){
-                        $http.post("api/missatges",{
-                            username: "xavigimenez",
-                            body: $scope.missatgeBody
-                        }).success(function(missatge) {
-                            $scope.missatges.unshift(missatge);
-                            $scope.missatgeBody = null;
-                        });
-                    }
-                };
-        });
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
