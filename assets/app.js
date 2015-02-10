@@ -26,6 +26,6 @@ app.service("MissatgesService", function($http) {
         return $http.get("/api/missatges");
     };
     this.create = function(missatge) {
-        return $http.post("/api/post");
+        return $http.post("/api/missatges");
     };
 });
